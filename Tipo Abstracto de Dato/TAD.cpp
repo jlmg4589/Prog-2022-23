@@ -49,7 +49,7 @@ int main()
     f1.mes = 2;
     f1.anio = 2023;
 
-    f2 = fechaCreate(2,3,2024);
+    f2 = fechaCreate(f,3,2024);
 
     cout << f1.dia << "/" << f1.mes << "/" << f1.anio << endl;
     cout << fechaToString(f1) << endl;
