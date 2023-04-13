@@ -6,16 +6,16 @@ class Articulo:
 
     def set_nombre(self, nombre):
         self.__nombre = nombre
-    
+
     def set_cantidad(self, cantidad):
         self.__cantidad = cantidad
 
     def get_nombre(self):
         return self.__nombre
-    
+
     def get_cantidad(self):
         return self.__cantidad
-    
+
     def __repr__(self):
         return f'Articulo({self.get_nombre()!r}, {self.get_cantidad()})'
 
@@ -41,7 +41,7 @@ class Gestion_articulo:
                 articulo.set_cantidad(cant + cantidad)
                 return
         raise ValueError("Artículo no dado de alta.")
-    
+
     @staticmethod
     def retirar_cantidad_articulo(nombre, cantidad):
         for articulo in Gestion_articulo.__lista_articulos:
@@ -52,7 +52,7 @@ class Gestion_articulo:
                     return
                 raise ValueError("No hay suficiente stock de este artículo.")
         raise ValueError("Artículo no dado de alta.")
-    
+
     @staticmethod
     def imprimir_articulos():
         contador = 0
@@ -80,7 +80,7 @@ class Albaran:
     def set_num_entrada(self):
         Albaran.__num_entrada += 1
         self.__num_entrada = Albaran.__num_entrada
-    
+
     def set_id_albaran(self, id_albaran):
         self.__id_albaran = id_albaran
 
@@ -92,7 +92,7 @@ class Albaran:
 
     def get_num_entrada(self):
         return self.__num_entrada
-   
+
     def get_id_albaran(self):
         return self.__id_albaran
 
@@ -101,7 +101,7 @@ class Albaran:
 
     def get_cantidad(self):
         return self.__cantidad
-    
+
     def __str__(self):
         return f'{self.get_num_entrada()} -> Id de Albarán: {self.get_id_albaran()}, {self.get_cantidad()} [uds]'
 
@@ -115,5 +115,3 @@ class Albaran:
             print(albaran)
         print()
         print("-"*50)
-
-
