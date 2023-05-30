@@ -26,7 +26,7 @@ class Productos():
         while cantidad > 0:
             for artic, cant in art.get_articulos().items():
                 Gestion_articulos.retirar_cantidad_articulo(artic, cant)
-            art.set_cantidad(articulo.get_cantidad() + 1)
+            art.set_cantidad(art.get_cantidad() + 1)
             cantidad -= 1
 
     """@staticmethod
@@ -68,15 +68,15 @@ class Productos():
     def __str__(self):
         return f'\n-> Produccto: {self.get_nombre()}\n-> Cantidad en stock: {self.get_cantidad()}\n' + \
                 'Cada unidad está constituida por:\n' + \
-                "".join([f"  * {articulo} -> {cantidad} [uds]\n" for articulo, cantidad in self.__get_articulos().items()])
+                "".join([f"  * {articulo} -> {cantidad} [uds]\n" for articulo, cantidad in self.get_articulos().items()])
 
     def __repr__(self):
-        return f"Productos({self.get_nombre()!r}, {self.__get_articulos()})"
+        return f"Productos({self.get_nombre()!r}, {self.get_articulos()})"
 
     def get_nombre(self):
         return self.__nombre
 
-    def __get_articulos(self):
+    def get_articulos(self):
         return self.__articulos
 
     def get_cantidad(self):
