@@ -23,22 +23,13 @@ Pedro
 
 
 def ordenar_palabra1(palabra):
+    """DocString"""
     return "".join([f"{palabra[indice+1]}{palabra[indice]}" \
             if (indice != (len(palabra)-1)) else f"{palabra[indice]}" \
             for indice in range(0, len(palabra), 2)])
 
-
-def ordenar_palabra2(palabra):
-    """ docstring de función """
-    respuesta = ""
-    for indice in range(0, len(palabra), 2):
-        if indice != (len(palabra)-1):
-            respuesta += f"{palabra[indice+1]}{palabra[indice]}"
-        else:
-            respuesta += f"{palabra[indice]}"
-    return respuesta
-
 def ordenar_palabra(palabra):
+    """DocString"""
     respuesta=""
     for indice in range(0, len(palabra)-1, 2):
         respuesta += f'{palabra[indice+1]}{palabra[indice]}'

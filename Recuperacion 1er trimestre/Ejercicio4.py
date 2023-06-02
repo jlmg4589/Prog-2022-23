@@ -29,60 +29,18 @@ No se puede usar ningún bucle while, for, definiciones por comprensión ni expr
 
 """
 
-def numeros_perfectos1(numeros):
-    return auxiliar_perfector1(numeros, set(), 1, 0)
+def numeros_perfectos(numeros):
+    """Docstring"""
+    return aux_perfectos(numeros, set(), 1, 0)
 
-def auxiliar_perfector1(numeros, conjunto, contador, suma):
+def aux_perfectos(numeros, conjunto, contador, suma):
+    """Docstring"""
     if len(numeros) == 0:
         return conjunto
-    if numeros[0] > contador:
-        suma += contador if numeros[0]%contador == 0 else 0
+    elif numeros[0] > contador:
+        suma += contador if numeros[0] % contador == 0 else 0
         contador += 1
-        return auxiliar_perfector1(numeros, conjunto, contador, suma)
-    if numeros[0] == suma:
+        return aux_perfectos(numeros, conjunto, contador, suma)
+    elif numeros[0] == suma:
         conjunto.add(numeros[0])
-    return auxiliar_perfector1(numeros[1:], conjunto, 1, 0)
-
-
-
-def numeros_perfectos(numeros):
-    conjunto = set()
-    auxiliar_perfector(numeros, conjunto)
-    print(conjunto.update())
-    return conjunto
-
-def auxiliar_perfector(numeros, conjunto):
-    
-    for numero in numeros:
-        perfecto = 0
-        for indice in range(1, numero):
-            if numero%indice == 0:
-                perfecto += indice
-        if perfecto == numero:
-            conjunto.add(numero)
-
-
-
-""" fdf """
-def numeros_perfectos3(numeros):
-    """ dfsf """
-    conjunto = set()
-    return numeros_perfectos_auxiliar(numeros, 0, conjunto)
-def numeros_perfectos_auxiliar(numeros, indice, conjunto):
-    """ fdf """
-    if indice < len(numeros):
-        if es_perfecto(numeros[indice], 1, 0) is True:
-            conjunto.add(numeros[indice])
-        return numeros_perfectos_auxiliar(numeros, indice+1, conjunto)
-    return conjunto
-def es_perfecto(numero, contador, sumatoria):
-    """ f """
-    print(sumatoria, numero)
-    if numero <= contador:
-        return False
-    if numero % contador == 0:
-        sumatoria += contador
-    if sumatoria == numero:
-        print(sumatoria, numero)
-        return True
-    return es_perfecto(numero, contador+1, sumatoria)
+    return aux_perfectos(numeros[1:], conjunto, 1, 0)

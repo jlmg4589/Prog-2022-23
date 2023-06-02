@@ -39,7 +39,7 @@ Por ejemplo:
 """
 
 """ df """
-def altura_genero1():
+def altura_genero():
     """ dsf """
     lineas = [x.rstrip() for x in open('registro.txt', 'r').readlines()]
     resultado = open('alturas.txt', 'w')
