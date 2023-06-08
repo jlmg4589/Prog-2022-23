@@ -1,3 +1,4 @@
+from typing import Any
 from produccion import *
 
 class Venta:
@@ -90,3 +91,4 @@ class Cliente():
 
     def get_articulos(self):
         return self.__telefono
+
